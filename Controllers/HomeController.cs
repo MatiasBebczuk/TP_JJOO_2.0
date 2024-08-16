@@ -138,7 +138,7 @@ public class HomeController : Controller
         using (SqlConnection db = new SqlConnection(connectionString))
         {
             int rowsAffected = db.Execute(sql, new { IdDeportista = idDeportista });
-            // Similar al anterior, rowsAffected indica cuántas filas fueron eliminadas.
+            //rowsAffected indica cuántas filas fueron eliminadas.
             Console.WriteLine($"{rowsAffected} fila(s) eliminada(s).");
         }
         return RedirectToAction("Index");
@@ -148,4 +148,83 @@ public class HomeController : Controller
     {
         return View();
     }
+
+    // Agrega un nuevo deportista a la base de datos
+public static void AgregarDeportista(Deportista deportista)
+{
+    string sql = "INSERT INTO Deportistas (Apellido, Nombre, FechaNacimiento, Foto, IdPais, IdDeporte) " +
+                 "VALUES (@Apellido, @Nombre, @FechaNacimiento, @Foto, @IdPais, @IdDeporte)";
+
+    using (SqlConnection db = new SqlConnection(connectionString))
+    {
+        db.Execute(sql, new
+        {
+            deportista.Apellido,
+            deportista.Nombre,
+            deportista.FechaNacimiento,
+            deportista.Foto,
+            deportista.IdPais,
+            deportista.IdDeporte
+        });
+    }
+}
+
+// Elimina un deportista de la base de datos según su Id
+public static void EliminarDeportista(int idDeportista)
+{
+    string sql = "DELETE FROM Deportistas WHERE IdDeportista = @IdDeportista";
+
+    using (SqlConnection db = new SqlConnection(connectionString))
+    {
+        db.Execute(sql, new { IdDeportista = idDeportista });
+    }
+}
+
+// Devuelve la información de un deporte según su Id
+public static Deporte VerInfoDeporte(int idDeporte)
+{
+    string sql = "SELECT * FROM Deportes WHERE IdDeporte = @IdDeporte";
+
+    using (SqlConnection db = new SqlConnection(connectionString))
+    {
+        return db.QueryFirstOrDefault<Deporte>(sql, new { IdDeporte = idDeporte });
+    }
+}
+
+// Devuelve la información de un país según su Id
+public static Pais VerInfoPais(int idPais)
+{
+    string sql = "SELECT * FROM Paises WHERE IdPais = @IdPais";
+
+    using (SqlConnection db = new SqlConnection(connectionString))
+    {
+        return db.QueryFirstOrDefault<Pais>(sql, new { IdPais = idPais });
+    }
+}
+
+// Devuelve la información de un deportista según su Id
+public static Deportista VerInfoDeportista(int idDeportista)
+{
+    string sql = "SELECT * FROM Deportistas WHERE IdDeportista = @IdDeportista";
+
+    using (SqlConnection db = new SqlConnection(connectionString))
+    {
+        return db.QueryFirstOrDefault<Deportista>(sql, new { IdDeportista = idDeportista });
+    }
+}
+
+// Devuelve la lista de todos los países
+public static List<Pais> ListarPaises()
+{
+    string sql = "SELECT * FROM Paises";
+
+    using (SqlConnection db = new SqlConnection(connectionString))
+    {
+        return db.Query<Pais>(sql).ToList();
+    }
+}
+
+// Devuelve la lista de deportistas en base a un deporte específico public static List<
+
+
 }
