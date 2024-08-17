@@ -1,0 +1,9 @@
+@model IEnumerable<TP_JJOO_2.Models.Pais>
+
+<h1>Paises</h1>
+<ul>
+    @foreach (var pais in Model)
+    {
+        <li>@pais.Nombre</li>
+    }
+</ul>

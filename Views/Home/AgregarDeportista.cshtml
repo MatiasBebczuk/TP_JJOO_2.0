@@ -1,0 +1,26 @@
+@model TP_JJOO_2.Models.Deportista
+
+<h1>Agregar Deportista</h1>
+<form method="post" action="/Home/AgregarDeportista">
+    <label>Nombre:</label>
+    <input type="text" name="Nombre" />
+    <label>Apellido:</label>
+    <input type="text" name="Apellido" />
+    <label>Deporte:</label>
+    <select name="IdDeporte">
+        @foreach (var deporte in ViewBag.Deportes as List<TP_JJOO_2.Models.Deporte>)
+        {
+            <option value="@deporte.IdDeporte">@deporte.Nombre</option>
+        }
+    </select>
+    <label>País:</label>
+    <select name="IdPais">
+        @foreach (var pais in ViewBag.Paises as List<TP_JJOO_2.Models.Pais>)
+        {
+            <option value="@pais.IdPais">@pais.Nombre</option>
+        }
+    </select>
+    <label>Imagen:</label>
+    <input type="text" name="Imagen" />
+    <button type="submit">Agregar</button>
+</form>

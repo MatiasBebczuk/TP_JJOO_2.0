@@ -5,4 +5,12 @@
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+     <ul>
+            <li><a href="@Url.Action("Index", "Home")">Inicio</a></li>
+            <li><a href="@Url.Action("Historia", "Home")">Historia</a></li>
+            <li><a href="@Url.Action("Deportes", "Home")">Deportes</a></li>
+            <li><a href="@Url.Action("Paises", "Home")">Paises</a></li>
+            <li><a href="@Url.Action("AgregarDeportista", "Home")">Agregar Deportista</a></li>
+            <li><a href="@Url.Action("Creditos", "Home")">Créditos</a></li>
+        </ul>
 </div>
