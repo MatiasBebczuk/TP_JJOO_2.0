@@ -1,16 +1,53 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
-}
+}    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-     <ul>
-            <li><a href="@Url.Action("Index", "Home")">Inicio</a></li>
-            <li><a href="@Url.Action("Historia", "Home")">Historia</a></li>
-            <li><a href="@Url.Action("Deportes", "Home")">Deportes</a></li>
-            <li><a href="@Url.Action("Paises", "Home")">Paises</a></li>
-            <li><a href="@Url.Action("AgregarDeportista", "Home")">Agregar Deportista</a></li>
-            <li><a href="@Url.Action("Creditos", "Home")">Créditos</a></li>
-        </ul>
+
+<!-- Secciones Destacadas -->
+    <div class="row">
+        <!-- Sección de Deportes -->
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <img src="/img/deportes.jpg" class="card-img-top" alt="Deportes">
+                <div class="card-body">
+                    <h5 class="card-title">Deportes</h5>
+                    <p class="card-text">Explora todos los deportes de los Juegos Olímpicos.</p>
+                    <a href="/Home/Deportes" class="btn btn-primary">Ver Deportes</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de Países -->
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <img src="~/img/paises.jpg" class="card-img-top" alt="Países">
+                <div class="card-body">
+                    <h5 class="card-title">Países</h5>
+                    <p class="card-text">Conoce los países participes de los J.J.O.O.</p>
+                    <a href="/Home/Paises" class="btn btn-primary">Ver Países</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de Noticias -->
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <img src="~/img/Historia.jpg" class="card-img-top" alt="Noticias">
+                <div class="card-body">
+                    <h5 class="card-title">Historia</h5>
+                    <p class="card-text">Conoce la historia de los J.J.O.O.</p>
+                    <a href="/Home/Historia" class="btn btn-primary">Ver Historia</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+  <div class="card-header">
+    Admin Options
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Agregar Deportista</h5>
+    <p class="card-text">Aquí podras ingresar los deportistas a la base de datos con su.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
 </div>

@@ -1,0 +1,15 @@
+/* Index.css */
+.jumbotron {
+    padding: 4rem 2rem;
+    background-color: #1d1d1d; /* Un color oscuro para resaltar el texto blanco */
+}
+
+.jumbotron h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.card-img-top {
+    height: 180px;
+    object-fit: cover;
+}

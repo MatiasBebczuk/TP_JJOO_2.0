@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\matia\\Downloads\\TP_JJOO_2.0\\wwwroot\\img\\jjoo.png",
+      "PackagePath": "staticwebassets\\img\\jjoo.png"
+    },
+    {
       "Id": "C:\\Users\\matia\\Downloads\\TP_JJOO_2.0\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
