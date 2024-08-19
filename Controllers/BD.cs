@@ -5,7 +5,8 @@ using TP_JJOO_2.Models;
 
 public static class BD
 {
-private static string _connectionString = @"Server=MATIAS_ILAN\SQLEXPRESS; Database=TP_JJOO_2; Trusted_Connection=True;";
+    private static string _connectionString = @"Server=localhost; DataBase= DeportistasDB ; Trusted_Connection=True;";
+
 
     // Agregar un deportista
     public static void AgregarDeportista(Deportista deportista)
