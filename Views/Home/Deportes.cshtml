@@ -3,8 +3,11 @@
 <h1>Deportes</h1>
 <ul>
     @foreach (var deporte in ViewBag.Deportes)
-    {
-        <li>@deporte.Nombre</li>
-        <img src = "../img/@deporte.Foto">
+    {   <li>
+    <a href="@Url.Action("VerDetalleDeporte", "Home", new { nombreDeporte = deporte.Nombre })">
+        @deporte.Nombre
+    </a>
+</li>
+        <img src = "@deporte.Foto">
     }
 </ul>
