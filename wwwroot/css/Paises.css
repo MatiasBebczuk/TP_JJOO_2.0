@@ -1,0 +1,29 @@
+body {
+    background-color: #f0f0f0; /* Color gris claro */
+    font-family: Arial, sans-serif; /* Fuente para el texto */
+    margin: 0; /* Elimina el margen por defecto */
+    padding: 0; /* Elimina el padding por defecto */
+}/* Asegúrate de que el contenedor de imágenes use flexbox */
+
+
+.image-list {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las imágenes se ajusten en múltiples filas */
+    list-style-type: none; /* Quita los puntos de la lista */
+    padding: 0; /* Elimina el padding por defecto */
+    margin: 0; /* Elimina el margin por defecto */
+}
+
+.image-item {
+    flex: 1 0 30%; /* Cada item ocupará aproximadamente el 30% del ancho del contenedor */
+    box-sizing: border-box; /* Incluye el padding y el border en el cálculo del ancho */
+    padding: 10px; /* Añade algo de espacio alrededor de cada imagen */
+    text-align: center; /* Centra el texto debajo de la imagen */
+}
+
+.image-item img {
+    max-width: 100%; /* Asegura que la imagen no se desborde del contenedor */
+    height: auto; /* Mantiene la proporción original de la imagen */
+    display: block; /* Elimina el espacio debajo de la imagen */
+    margin: 0 auto; /* Centra la imagen dentro del contenedor */
+}

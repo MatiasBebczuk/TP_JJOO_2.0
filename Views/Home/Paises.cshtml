@@ -1,9 +1,23 @@
 @model IEnumerable<TP_JJOO_2.Models.Pais>
 
-<h1>Paises</h1>
-<ul>
-    @foreach (var pais in ViewBag.Paises)
-    {
-        <li>@pais.Nombre</li>
-    }
-</ul>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paises</title>
+    <link rel="stylesheet" href="~/css/Paises.css" />
+</head>
+<body>
+    <h1>Paises</h1>
+    <ul class="image-list">
+        @foreach (var pais in @ViewBag.Paises)
+        {
+            <li class="image-item">
+                <img src="@pais.Bandera" alt="@pais.Nombre" />
+                <p>@pais.Nombre</p>
+            </li>
+        }
+    </ul>
+</body>
+</html>
