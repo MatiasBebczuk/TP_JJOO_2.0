@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "QXELo8ixBOxspGUM2L02gYycbXgzBe5LL99S/gIGmJg=",
+  "Hash": "QxXue6UkaM9dOPlVlup9qIFzIVaEG0vEc8oGWRYzhZg=",
   "Source": "Pictures",
   "BasePath": "_content/Pictures",
   "Mode": "Default",
@@ -110,6 +110,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\48242936\\Downloads\\TP_JJOO_2.0\\wwwroot\\img\\anashe.jpg",
+      "SourceId": "Pictures",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\48242936\\Downloads\\TP_JJOO_2.0\\wwwroot\\",
+      "BasePath": "_content/Pictures",
+      "RelativePath": "img/anashe.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\anashe.jpg"
     },
     {
       "Identity": "C:\\Users\\48242936\\Downloads\\TP_JJOO_2.0\\wwwroot\\img\\Deportes.jpg",

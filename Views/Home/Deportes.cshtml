@@ -1,9 +1,10 @@
-@model IEnumerable<TP_JJOO_2.Models.Deporte>
+
 
 <h1>Deportes</h1>
 <ul>
-    @foreach (var deporte in Model)
+    @foreach (var deporte in ViewBag.Deportes)
     {
         <li>@deporte.Nombre</li>
+        <img src = "../img/@deporte.Foto">
     }
 </ul>
