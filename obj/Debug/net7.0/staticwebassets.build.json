@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "wmM7F6huYqn5Xpjy01iMiOFIbWfiGbjRFn/C28fqtCQ=",
+  "Hash": "BMfAa5Nz8GuKSB5za/he0Q+WQyhJvkqFpKJAU9AVkwI=",
   "Source": "Pictures",
   "BasePath": "_content/Pictures",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\matia\\Downloads\\TP_JJOO_2.0\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Pictures.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\matia\\Downloads\\TP_JJOO_2.0\\wwwroot\\css\\Deportes.css",
+      "SourceId": "Pictures",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\matia\\Downloads\\TP_JJOO_2.0\\wwwroot\\",
+      "BasePath": "_content/Pictures",
+      "RelativePath": "css/Deportes.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Deportes.css"
     },
     {
       "Identity": "C:\\Users\\matia\\Downloads\\TP_JJOO_2.0\\wwwroot\\css\\historia.css",

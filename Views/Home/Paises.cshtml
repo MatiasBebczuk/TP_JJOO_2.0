@@ -19,7 +19,7 @@
             foreach (var pais in paises)
             {
                 <li class="pais-item">
-                    <img src="~/img/@pais.Bandera" alt="Bandera de @pais.Nombre" class="pais-img" />
+                    <img src="@pais.Bandera" alt="Bandera de @pais.Nombre" class="pais-img" />
                     <a href="@Url.Action("VerDetallePais", "Home", new { idPais = pais.IdPais })" class="pais-link">
                         @pais.Nombre
                     </a>

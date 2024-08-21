@@ -19,7 +19,7 @@
             foreach (var deporte in deportes)
             {
                 <li class="deporte-item">
-                    <img src="~/img/@deporte.Imagen" alt="Imagen de @deporte.Nombre" class="deporte-img" />
+                    <img src="@deporte.Foto" alt="Imagen de @deporte.Nombre" class="deporte-img" />
                     <a href="@Url.Action("VerDetalleDeporte", "Home", new { idDeporte = deporte.IdDeporte })" class="deporte-link">
                         @deporte.Nombre
                     </a>

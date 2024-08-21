@@ -6,33 +6,34 @@ public static class BD
 {
     private static string _connectionString = @"Server=MATIAS_ILAN\SQLEXPRESS; DataBase=JJOO; Trusted_Connection=True;";
 
+    // Listas estáticas para almacenar los datos de deportistas, deportes y países
+    public static List<Deportista> Deportistas = new List<Deportista>();
+    public static List<Deporte> Deportes = new List<Deporte>();
+    public static List<Pais> Paises = new List<Pais>();
+
     // Método para agregar un deportista a la base de datos
-    public static void AgregarDeportista(Deportista deportista)
+    public static void AgregarDeportista(Deportista dep)
     {
-        using (SqlConnection connection = new SqlConnection(_connectionString))
+        using (SqlConnection db = new SqlConnection(_connectionString))
         {
-            string sql = @"
-                INSERT INTO Deportista (Nombre, Apellido, IdDeporte, IdPais, Imagen)
-                VALUES (@Nombre, @Apellido, @IdDeporte, @IdPais, @Imagen)";
-            
-            connection.Execute(sql, new
-            {
-                Nombre = deportista.Nombre,
-                Apellido = deportista.Apellido,
-                IdDeporte = deportista.IdDeporte,
-                IdPais = deportista.IdPais,
-                Imagen = deportista.Imagen
-            });
+            string sqlQuery = "INSERT INTO Deportistas (Nombre, Apellido, IdDeporte, IdPais, Imagen) VALUES (@Nombre, @Apellido, @IdDeporte, @IdPais, @Imagen)";
+            db.Execute(sqlQuery, new { dep.Nombre, dep.Apellido, dep.IdDeporte, dep.IdPais, dep.Imagen });
+
+            // Agregar el deportista a la lista estática
+            Deportistas.Add(dep);
         }
     }
 
     // Método para eliminar un deportista de la base de datos
     public static void EliminarDeportista(int idDeportista)
     {
-        using (SqlConnection connection = new SqlConnection(_connectionString))
+        using (SqlConnection db = new SqlConnection(_connectionString))
         {
-            string sql = "DELETE FROM Deportista WHERE IdDeportista = @IdDeportista";
-            connection.Execute(sql, new { IdDeportista = idDeportista });
+            string sqlQuery = "DELETE FROM Deportistas WHERE IdDeportista = @IdDeportista";
+            db.Execute(sqlQuery, new { IdDeportista = idDeportista });
+
+            // Eliminar el deportista de la lista estática
+            Deportistas.RemoveAll(d => d.IdDeportista == idDeportista);
         }
     }
 
@@ -72,16 +73,19 @@ public static class BD
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
             string sql = "SELECT * FROM Paises";
-            return connection.Query<Pais>(sql).AsList();
+            Paises = connection.Query<Pais>(sql).AsList();
+            return Paises;
         }
     }
 
-     public static List<Deporte> ListarDeportes()
+    // Método para listar todos los deportes
+    public static List<Deporte> ListarDeportes()
     {
-        using (SqlConnection con = new SqlConnection(connectionString))
+        using (SqlConnection con = new SqlConnection(_connectionString))
         {
             string query = "SELECT * FROM Deportes";
-            return con.Query<Deporte>(query).AsList();
+            Deportes = con.Query<Deporte>(query).AsList();
+            return Deportes;
         }
     }
 
@@ -91,7 +95,8 @@ public static class BD
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
             string sql = "SELECT * FROM Deportistas WHERE IdDeporte = @IdDeporte";
-            return connection.Query<Deportista>(sql, new { IdDeporte = idDeporte }).AsList();
+            Deportistas = connection.Query<Deportista>(sql, new { IdDeporte = idDeporte }).AsList();
+            return Deportistas;
         }
     }
 
@@ -101,7 +106,8 @@ public static class BD
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
             string sql = "SELECT * FROM Deportistas WHERE IdPais = @IdPais";
-            return connection.Query<Deportista>(sql, new { IdPais = idPais }).AsList();
+            Deportistas = connection.Query<Deportista>(sql, new { IdPais = idPais }).AsList();
+            return Deportistas;
         }
     }
 }
