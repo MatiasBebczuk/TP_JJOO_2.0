@@ -85,8 +85,17 @@ namespace TP_JJOO_2.Controllers
 
         // Acción para manejar el envío del formulario de agregar un deportista
         [HttpPost]
-        public IActionResult GuardarDeportista(Deportista dep)
+        public IActionResult GuardarDeportista(string Nombre, string Apellido, int IdPais, int IdDeporte, string Foto, DateTime FechaNacimiento)
         {
+            Deportista dep = new Deportista{
+                Nombre = Nombre,
+                Apellido = Apellido,
+                IdPais = IdPais,
+                IdDeporte = IdDeporte,
+                Imagen = Foto,
+                FechaNacimiento = FechaNacimiento
+            };
+
             if (ModelState.IsValid)
             {
                 BD.AgregarDeportista(dep);
@@ -101,11 +110,11 @@ namespace TP_JJOO_2.Controllers
             return View("AgregarDeportista", dep);
         }
 
-        // Acción para eliminar un deportista
-        public IActionResult EliminarDeportista(int idCandidato)
+        // eliminar un deportista
+        public IActionResult EliminarDeportista(int IdDeportista)
         {
-            BD.EliminarDeportista(idCandidato);
-            return RedirectToAction("Index");
+            BD.EliminarDeportista(IdDeportista);
+            return View();
         }
 
         // Acción para mostrar los créditos

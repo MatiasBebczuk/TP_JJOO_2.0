@@ -12,7 +12,7 @@
 </head>
 <body>
     <h1>@ViewBag.Title</h1>
-    <form method="post" action="@Url.Action("GuardarDeportista", "Home")">
+    <form method="post" action='@Url.Action("GuardarDeportista", "Home")'>
         <label for="Nombre">Nombre:</label>
         <input type="text" id="Nombre" name="Nombre" required />
 
@@ -35,8 +35,10 @@
             }
         </select>
 
-        <label for="Imagen">Foto:</label>
-        <input type="text" id="Foto" name="Imagen" required />
+        <label for="Foto">Foto:</label>
+        <input type="text" id="Foto" name="Foto" required />
+
+        <input type="date" name="FechaNacimiento" required />
 
         <button type="submit">Agregar</button>
     </form>

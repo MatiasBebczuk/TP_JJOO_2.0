@@ -6,4 +6,5 @@
         public int IdDeporte { get; set; }
         public int IdPais { get; set; }
         public string Imagen { get; set; }
+        public DateTime FechaNacimiento {get; set; }
     }

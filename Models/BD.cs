@@ -4,27 +4,26 @@ using Dapper;
 
 public static class BD
 {
-    private static string _connectionString = @"Server=MATIAS_ILAN\SQLEXPRESS; DataBase=JJOO; Trusted_Connection=True;";
+    private static string _connectionString = @"Server=localhost; DataBase=JJOO; Trusted_Connection=True;";
 
-    // Listas estáticas para almacenar los datos de deportistas, deportes y países
+    // Listas estáticas 
     public static List<Deportista> Deportistas = new List<Deportista>();
     public static List<Deporte> Deportes = new List<Deporte>();
     public static List<Pais> Paises = new List<Pais>();
 
-    // Método para agregar un deportista a la base de datos
+    // agregar un deportista a la base de datos
     public static void AgregarDeportista(Deportista dep)
     {
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
-            string sqlQuery = "INSERT INTO Deportistas (Nombre, Apellido, IdDeporte, IdPais, Imagen) VALUES (@Nombre, @Apellido, @IdDeporte, @IdPais, @Imagen)";
-            db.Execute(sqlQuery, new { dep.Nombre, dep.Apellido, dep.IdDeporte, dep.IdPais, dep.Imagen });
-
+            string sqlQuery = "INSERT INTO Deportistas (Nombre, Apellido, IdDeporte, IdPais, Foto, FechaNacimiento) VALUES (@Nombre, @Apellido, @IdDeporte, @IdPais, @Foto, @FechaNacimiento)";
+            db.Execute(sqlQuery, new { Nombre = dep.Nombre, Apellido = dep.Apellido, IdDeporte = dep.IdDeporte, IdPais = dep.IdPais, Foto = dep.Imagen, FechaNacimiento = dep.FechaNacimiento });
             // Agregar el deportista a la lista estática
             Deportistas.Add(dep);
         }
     }
 
-    // Método para eliminar un deportista de la base de datos
+    // eliminar un deportista de la base de datos
     public static void EliminarDeportista(int idDeportista)
     {
         using (SqlConnection db = new SqlConnection(_connectionString))
@@ -37,7 +36,7 @@ public static class BD
         }
     }
 
-    // Método para obtener información de un deporte específico
+    //obtener información de un deporte específico
     public static Deporte VerInfoDeporte(int idDeporte)
     {
         using (SqlConnection connection = new SqlConnection(_connectionString))
@@ -57,7 +56,7 @@ public static class BD
         }
     }
 
-    // Método para obtener información de un deportista específico
+    // obtener data de un deportista específico
     public static Deportista VerInfoDeportista(int idDeportista)
     {
         using (SqlConnection connection = new SqlConnection(_connectionString))
@@ -67,7 +66,7 @@ public static class BD
         }
     }
 
-    // Método para listar todos los países
+    // listar todos los países
     public static List<Pais> ListarPaises()
     {
         using (SqlConnection connection = new SqlConnection(_connectionString))
@@ -78,7 +77,7 @@ public static class BD
         }
     }
 
-    // Método para listar todos los deportes
+    // listar todos los deportes
     public static List<Deporte> ListarDeportes()
     {
         using (SqlConnection con = new SqlConnection(_connectionString))
@@ -89,7 +88,7 @@ public static class BD
         }
     }
 
-    // Método para listar deportistas en base a un deporte específico
+    //  listar deportistas en base a un deporte específico
     public static List<Deportista> ListarDeportistas(int idDeporte)
     {
         using (SqlConnection connection = new SqlConnection(_connectionString))
@@ -100,7 +99,7 @@ public static class BD
         }
     }
 
-    // Método para listar deportistas en base a un país específico
+    // listar deportistas en base a un país específico
     public static List<Deportista> ListarDeportistasPorPais(int idPais)
     {
         using (SqlConnection connection = new SqlConnection(_connectionString))
