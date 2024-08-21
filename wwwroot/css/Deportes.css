@@ -1,4 +1,4 @@
-.pais-list {
+.deporte-list {
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -6,19 +6,20 @@
     flex-wrap: wrap;
 }
 
-.pais-item {
+.deporte-item {
     margin: 10px;
     text-align: center;
+    width: 30%; /* Ajusta el tamaño según tu diseño */
 }
 
-.pais-img {
-    width: 150px;
+.deporte-img {
+    width: 100%;
     height: auto;
     display: block;
     margin: 0 auto;
 }
 
-.pais-link {
+.deporte-link {
     display: block;
     margin-top: 5px;
     text-decoration: none;
@@ -26,6 +27,6 @@
     font-size: 1.1em;
 }
 
-.pais-link:hover {
+.deporte-link:hover {
     text-decoration: underline;
 }
