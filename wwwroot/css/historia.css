@@ -5,6 +5,9 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 
 h1 {
