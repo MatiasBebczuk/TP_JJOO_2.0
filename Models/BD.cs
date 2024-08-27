@@ -24,17 +24,16 @@ public static class BD
     }
 
     // eliminar un deportista de la base de datos
+   
     public static void EliminarDeportista(int idDeportista)
     {
+        string sql = "DELETE FROM Deportistas WHERE IdDeportista = @pIdDeportista";
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
-            string sqlQuery = "DELETE FROM Deportistas WHERE IdDeportista = @IdDeportista";
-            db.Execute(sqlQuery, new { IdDeportista = idDeportista });
-
-            // Eliminar el deportista de la lista estática
-            Deportistas.RemoveAll(d => d.IdDeportista == idDeportista);
+            db.Execute(sql, new { pIdDeportista = idDeportista });
         }
-    }
+    } 
+
 
     //obtener información de un deporte específico
     public static Deporte VerInfoDeporte(int idDeporte)
@@ -46,7 +45,7 @@ public static class BD
         }
     }
 
-    // Método para obtener información de un país específico
+    // obtener información de un país específico
     public static Pais VerInfoPais(int idPais)
     {
         using (SqlConnection connection = new SqlConnection(_connectionString))

@@ -111,11 +111,11 @@ namespace TP_JJOO_2.Controllers
         }
 
         // eliminar un deportista
-        public IActionResult EliminarDeportista(int IdDeportista)
-        {
-            BD.EliminarDeportista(IdDeportista);
-            return View();
-        }
+       public IActionResult EliminarDeportista(int idCandidato)
+    {
+        BD.EliminarDeportista(idCandidato);
+        return View();
+    }
 
         // Acción para mostrar los créditos
         public IActionResult Creditos()

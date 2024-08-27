@@ -1,27 +1,11 @@
-@{
-    ViewBag.Title = "Agregar Deportista";
-}
-
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title</title>
-    <link rel="stylesheet" href="~/css/EliminarDeportista.css">
-</head>
-<body>
-    <h1>@ViewBag.Title</h1>
-    <form method="post" action='@Url.Action("EliminarDeportista", "Home")'>
-
-    <label for="IdDeportista">Id Deportista:</label>
-        <select id="IdDeportista" name="IdDeportista" required>
-            @foreach (var deportista in ViewBag.Deportista as List<Deportista>)
-            {
-                <option value="@deportista.IdDeporte">@deportista.Nombre</option>
-            }
-        </select>
-        <button type="submit">Eliminar</button>
+<div class="form-container">
+    <form action='@Url.Action("EliminarDeportista","Home")' method="post" class="form-wrapper">
+        
+        <div class="form-group">
+            <label for="idCandidato">Id del deportista a Eliminar:</label> 
+            <input type="text" class="form-control" id="idCandidato" name="idCandidato" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
     </form>
-</body>
-</html>
+</div>
+
